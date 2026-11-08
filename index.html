@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gatos en adopción en Elche. Encuentra a tu nuevo compañero.">
+  <title>MICHIS ELX | Gatos en adopción en Elche</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__contenido">
+      <a href="#" class="logo">🐾 MICHIS ELX</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="#gatos">Gatos</a></li>
+          <li><a href="#adoptar">Cómo adoptar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor">
+        <h1>MICHIS ELX</h1>
+        <p class="hero__subtitulo">Adopta un gato en Elche</p>
+        <p>Todos nuestros gatos se entregan vacunados, desparasitados, con microchip y esterilizados.</p>
+        <a href="#gatos" class="boton">Ver gatos disponibles</a>
+      </div>
+    </section>
+
+    <section id="gatos" class="seccion">
+      <div class="contenedor">
+        <h2>Gatos en adopción</h2>
+
+        <div class="filtros">
+          <label for="filtro-sexo">Sexo:</label>
+          <select id="filtro-sexo">
+            <option value="todos">Todos</option>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+          </select>
+
+          <label for="filtro-edad">Edad:</label>
+          <select id="filtro-edad">
+            <option value="todos">Todas</option>
+            <option value="cachorro">Cachorro (menos de 1 año)</option>
+            <option value="adulto">Adulto (1 a 7 años)</option>
+            <option value="senior">Senior (más de 7 años)</option>
+          </select>
+        </div>
+
+        <p id="contador" class="contador"></p>
+        <div id="lista-gatos" class="tarjetas"></div>
+      </div>
+    </section>
+
+    <section id="adoptar" class="seccion seccion--clara">
+      <div class="contenedor">
+        <h2>¿Cómo adoptar?</h2>
+        <ol class="pasos">
+          <li><strong>Elige un gato</strong> y pulsa "Quiero adoptarlo".</li>
+          <li><strong>Rellena el formulario</strong> de contacto con tus datos.</li>
+          <li><strong>Te llamamos</strong> para hacer una entrevista y conocer al gato.</li>
+          <li><strong>Firmamos el contrato</strong> de adopción y ¡a casa!</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <div class="contenedor contenedor--estrecho">
+        <h2>Formulario de adopción</h2>
+        <form id="formulario" novalidate>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono">
+
+          <label for="gato">Gato que te interesa</label>
+          <select id="gato" name="gato"></select>
+
+          <label for="mensaje">Cuéntanos un poco sobre ti</label>
+          <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+          <p id="errores" class="errores"></p>
+          <button type="submit" class="boton">Enviar solicitud</button>
+          <p id="exito" class="exito"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ficha del gato: se abre al pulsar su foto -->
+  <dialog id="ficha" class="ficha">
+    <div class="ficha__contenido">
+      <button id="ficha-cerrar" class="ficha__cerrar" aria-label="Cerrar">✕</button>
+      <img id="ficha-foto" src="" alt="" class="ficha__foto">
+      <div class="ficha__info">
+        <h3 id="ficha-nombre"></h3>
+        <div>
+          <span id="ficha-sexo" class="etiqueta"></span>
+          <span id="ficha-edad" class="etiqueta"></span>
+        </div>
+        <p id="ficha-descripcion"></p>
+        <p class="ficha__extra">✔ Vacunado · ✔ Desparasitado · ✔ Microchip · ✔ Esterilizado</p>
+        <button id="ficha-adoptar" class="boton">Quiero adoptarlo</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>MICHIS ELX · Elche (Alicante)</p>
+      <p>Proyecto de estudiante. Los gatos y datos son ficticios.</p>
+    </div>
+  </footer>
+
+  <script src="js/gatos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
